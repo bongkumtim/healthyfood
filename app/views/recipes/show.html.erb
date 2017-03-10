@@ -6,7 +6,11 @@
 <%= @recipe.nutrition %><br>
 <%= @recipe.description %><br>
 <%= @recipe.recipe %><br>
-<%= @recipe.direction %></p>
+<%= @recipe.direction %></p><br>
+<p><%= @recipe.get_upvotes.size %> Like </p>
+<p><%= @recipe.get_downvotes.size %>Dislike </p>
+<%= link_to "Like", like_recipe_path(@recipe), method: :get %>
+<%= link_to "Dislike", dislike_recipe_path(@recipe), method: :get %>
 
 <h2><%= "Comment".pluralize(@recipe.comments.count) %> </h2>
 <% @comments.each do |comment| %>
