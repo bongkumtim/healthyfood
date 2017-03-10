@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
 	before_action :require_login, except: [:show, :index]
-	before_action :find, only: [:show, :edit, :update, :destroy]
+	before_action :find, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
 	def index
 		@recipes = Recipe.all.order(created_at: :desc)
@@ -40,6 +40,16 @@ class RecipesController < ApplicationController
 	def destroy
 		@recipe.destroy
 		redirect_to root_path
+	end
+
+	def upvote
+		@recipe.upvote_by current_user
+		redirect_to :back
+	end
+
+	def downvote
+		@recipe.downvote_by current_user
+		redirect_to :back
 	end
 
 	private
