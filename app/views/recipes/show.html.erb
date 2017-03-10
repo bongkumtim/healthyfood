@@ -6,3 +6,7 @@
 <%= @recipe.description %><br>
 <%= @recipe.recipe %><br>
 <%= @recipe.direction %></p>
+
+<%= link_to "Edit", edit_recipe_path(@recipe) %>
+<%= link_to "Home", root_path %>
+<%= link_to "Delete", recipe_path(@recipe), method: :delete, data: {Confirm: "Are you sure"} %>
