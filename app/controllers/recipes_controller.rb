@@ -4,10 +4,11 @@ class RecipesController < ApplicationController
 
 	def index
 		@recipes = Recipe.all.order(created_at: :desc)
+		
 	end
 
 	def show
-
+		@comments = Comment.where(recipe_id: @recipe)
 	end
 
 	def new

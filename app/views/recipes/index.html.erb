@@ -1,7 +1,10 @@
 <h1> Homepage for recipe </h1>
 
 <% @recipes.each do |recipe| %>
-	<h2> <%= link_to recipe.title, recipe_path(recipe) %> </h2>
-	<% end %>
-
-<%= link_to "Add New recipe", new_recipe_path %>
+<%= link_to (image_tag recipe.image.url(:medium)), recipe_path(recipe) %>
+<h3> Comment : <%= recipe.comments.count %></h3>
+<h2> <%= recipe.title %> </h2>
+<br><br>
+<% end %>
+<br><br>
+<h1><%= link_to "Add New recipe", new_recipe_path %></h1>

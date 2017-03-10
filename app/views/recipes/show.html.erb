@@ -8,6 +8,15 @@
 <%= @recipe.recipe %><br>
 <%= @recipe.direction %></p>
 
+<h2><%= "Comment".pluralize(@recipe.comments.count) %> </h2>
+<% @comments.each do |comment| %>
+<p> <%= comment.user.email %> </p>
+<p> <%= comment.content %> </p>
+<% end %>
+<%= render 'comments/form' %>
+
+
+
 <%= link_to "Edit", edit_recipe_path(@recipe) %>
 <%= link_to "Home", root_path %>
 <%= link_to "Delete", recipe_path(@recipe), method: :delete, data: {Confirm: "Are you sure"} %>
