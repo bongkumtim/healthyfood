@@ -1,26 +1,147 @@
-<h1> Selected Recipe </h1>
-
-<h2><%= @recipe.title %></h2>
-<%= image_tag @recipe.image.url(:medium) %>
-<p><%= @recipe.cook_time %><br>
-<%= @recipe.nutrition %><br>
-<%= @recipe.description %><br>
-<%= @recipe.recipe %><br>
-<%= @recipe.direction %></p><br>
-<p><%= @recipe.get_upvotes.size %> Like </p>
-<p><%= @recipe.get_downvotes.size %>Dislike </p>
-<%= link_to "Like", like_recipe_path(@recipe), method: :get %>
-<%= link_to "Dislike", dislike_recipe_path(@recipe), method: :get %>
-
-<h2><%= "Comment".pluralize(@recipe.comments.count) %> </h2>
-<% @comments.each do |comment| %>
-<p> <%= comment.user.email %> </p>
-<p> <%= comment.content %> </p>
-<% end %>
-<%= render 'comments/form' %>
 
 
+<section class="clear_top">
+  <div class="container">
+      <h2 class="title_recip"><%= @recipe.title %></h2>
+  </div>
+</div>
 
-<%= link_to "Edit", edit_recipe_path(@recipe) %>
-<%= link_to "Home", root_path %>
-<%= link_to "Delete", recipe_path(@recipe), method: :delete, data: {Confirm: "Are you sure"} %>
+<section class="details">
+   <!--Row with two columns divided in 1:2 ratio-->
+   <div class="container "> 
+    <div class="row ">
+        <%= image_tag @recipe.image.url(:medium), class: "col-sm-4 img_recipe"%>
+        <div class="col-sm-4 no-margin"> <p class="title_info">INFORMATIONS ABOUT YOUR DISH :</p>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin"> <span class="glyphicon glyphicon-time"></span><%= @recipe.cook_time %><span class="glyphicon glyphicon-stats"></span><%=  @recipe.nutrition %></div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin "><%= @recipe.description %></div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin"><%= @recipe.recipe %></div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin"><%= @recipe.direction %></div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin "> <%= @recipe.get_upvotes.size %> Like | <%= @recipe.get_downvotes.size %> Dislike </div>
+                <%= link_to "Like", like_recipe_path(@recipe), method: :get %>  | 
+                <%= link_to "Dislike", dislike_recipe_path(@recipe), method: :get %>
+            </div>
+      
+        </div>
+        <div class="col-sm-4 pre_payment_form "> 
+            <div class="row full_color">
+                <div class="col-m-12 price"> 54 RM </div>
+            </div>
+
+
+          <form class="space" action="/" method="post">
+          
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                Name<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off" />
+            </div>
+        
+            <div class="field-wrap">
+              <label>
+                adress<span class="req">*</span>
+              </label>
+              <input type="text"required autocomplete="off"/>
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Set A Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+          
+          <button type="submit" class="button button-block"/>Order here</button>
+          
+          </form>
+        </div>
+     
+
+    </div>
+  </div>
+</div>
+
+
+<section class="recipes">
+  <div class="container"> 
+  <h2><%= "Comment".pluralize(@recipe.comments.count) %> </h2>
+    <% @comments.each do |comment| %>
+    <p> <%= comment.user.email %> </p>
+    <p> <%= comment.content %> </p>
+    <% end %>
+    <%= render 'comments/form' %>
+
+
+
+    <%= link_to "Edit", edit_recipe_path(@recipe) %>
+    <%= link_to "Home", root_path %>
+    <%= link_to "Delete", recipe_path(@recipe), method: :delete, data: {Confirm: "Are you sure"} %>
+
+
+  </div>
+</div>
+
+<script> 
+$('.pre_payment_form').find('input, textarea').on('keyup blur focus', function (e) {
+  
+  var $this = $(this),
+      label = $this.prev('label');
+
+    if (e.type === 'keyup') {
+      if ($this.val() === '') {
+          label.removeClass('active highlight');
+        } else {
+          label.addClass('active highlight');
+        }
+    } else if (e.type === 'blur') {
+      if( $this.val() === '' ) {
+        label.removeClass('active highlight'); 
+      } else {
+        label.removeClass('highlight');   
+      }   
+    } else if (e.type === 'focus') {
+      
+      if( $this.val() === '' ) {
+        label.removeClass('highlight'); 
+      } 
+      else if( $this.val() !== '' ) {
+        label.addClass('highlight');
+      }
+    }
+
+});
+
+$('.tab a').on('click', function (e) {
+  
+  e.preventDefault();
+  
+  $(this).parent().addClass('active');
+  $(this).parent().siblings().removeClass('active');
+  
+  target = $(this).attr('href');
+
+  $('.tab-content > div').not(target).hide();
+  
+  $(target).fadeIn(600);
+  
+});
+</script>
+

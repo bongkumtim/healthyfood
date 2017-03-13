@@ -1,11 +1,159 @@
-<h1> Homepage for recipe </h1>
+<section class="result_all_recipes">
+  <div class="container menu_search">
+    <div class="button recipe_tag">diabetes</div>
+    <div class="button recipe_tag">gout</div>
+    <div class="button recipe_tag">hypertension</div>
+    <div class="button recipe_tag">weight control</div>
+  </div>
+</div>
 
-<% @recipes.each do |recipe| %>
-<%= link_to (image_tag recipe.image.url(:medium)), recipe_path(recipe) %>
-<h3> Comment : <%= recipe.comments.count %></h3>
-<h2> <%= recipe.title %> </h2>
-<p><%= recipe.get_upvotes.size %> Like </p>
-<br><br>
-<% end %>
-<br><br>
+
+<section class="recipes">
+  <div class="container">
+    <h2 class="title"> What do you want <span>to eat today ?</span><i class="fa fa-comment"></i></h2>
+
+  </div>
+  <div class="container cf">
+    <!-- Course 1 -->
+    <% @recipes.each do |recipe| %>
+    <div class="recipes-element bounce-up cf">
+      <div class="subject development">
+        <div class="category-color"></div>
+        <div class="header cf">
+          <%= link_to (image_tag recipe.image.url(:medium), class: "img_recipe" ), recipe_path(recipe) %>
+
+
+          <h6 class="info"><i class="fa fa-calendar-o"></i> COOK TIME : </br><%= recipe.cook_time %></h4>
+          <h6 class="info"><i class="fa fa-folder-o"></i> NUTRITION : </br><%= recipe.nutrition %></h4>
+          <h6 class="info"> COMMENT : </br> <%= recipe.comments.count %></h6>
+        </div>
+        <h3 class="title_recipes"><%= recipe.title %></h3>
+        <%= link_to "take a look", recipe_path(recipe.id) , :class => "enrole" %>
+        <p><%= recipe.get_upvotes.size %> Like </p>
+      </div>
+    </div>
+
+    <% end %>
+
+
+
+    <!-- hardcodded recipes -->
+    <div class="recipes-element bounce-up cf">
+      <div class="subject development">
+        <div class="category-color"></div>
+        
+        <div class="header cf">
+          <%= image_tag("groupe_pois.png", class: "img_recipe" ) %> 
+
+          <h6 class="info"><i class="fa fa-calendar-o"></i> COOK TIME : </br> 15-25mins</h4>
+          <h6 class="info"><i class="fa fa-folder-o"></i> NUTRITION : </br> Est. 710 calories</h4>
+        </div>
+        <h3 class="title_recipes">Chicken ginger </br>and sunny veggies</h3>
+        <div class="text_courant"> Tonight’s dinner is adapted from the winning dish seen in Bravo’s Top Chef Season 14 finale. </div>
+        <div class="enrole">take a look </div>
+      </div>
+    </div>
+    
+    
+  <div class="recipes-element bounce-up cf">
+      <div class="subject development">
+        <div class="category-color"></div>
+        
+        <div class="header cf">
+          <%= image_tag("groupe_pois.png", class: "img_recipe" ) %> 
+
+          <h6 class="info"><i class="fa fa-calendar-o"></i> COOK TIME : </br> 15-25mins</h4>
+          <h6 class="info"><i class="fa fa-folder-o"></i> NUTRITION : </br> Est. 710 calories</h4>
+        </div>
+        <h3 class="title_recipes">Chicken ginger </br>and sunny veggies</h3>
+        <div class="text_courant"> Tonight’s dinner is adapted from the winning dish seen in Bravo’s Top Chef Season 14 finale. </div>
+        <div class="enrole">take a look </div>
+      </div>
+    </div>
+
+    
+    <div class="recipes-element bounce-up cf">
+      <div class="subject development">
+        <div class="category-color"></div>
+        
+        <div class="header cf">
+          <%= image_tag("groupe_pois.png", class: "img_recipe" ) %> 
+
+          <h6 class="info"><i class="fa fa-calendar-o"></i> COOK TIME : </br> 15-25mins</h4>
+          <h6 class="info"><i class="fa fa-folder-o"></i> NUTRITION : </br> Est. 710 calories</h4>
+        </div>
+        <h3 class="title_recipes">Chicken ginger </br>and sunny veggies</h3>
+        <div class="text_courant"> Tonight’s dinner is adapted from the winning dish seen in Bravo’s Top Chef Season 14 finale. </div>
+        <div class="enrole">take a look </div>
+      </div>
+    </div>
+    
+    <div class="recipes-element bounce-up cf">
+      <div class="subject development">
+        <div class="category-color"></div>
+        
+        <div class="header cf">
+          <%= image_tag("groupe_pois.png", class: "img_recipe" ) %> 
+
+          <h6 class="info"><i class="fa fa-calendar-o"></i> COOK TIME : </br> 15-25mins</h4>
+          <h6 class="info"><i class="fa fa-folder-o"></i> NUTRITION : </br> Est. 710 calories</h4>
+        </div>
+        <h3 class="title_recipes">Chicken ginger </br>and sunny veggies</h3>
+        <div class="text_courant"> Tonight’s dinner is adapted from the winning dish seen in Bravo’s Top Chef Season 14 finale. </div>
+        <div class="enrole">take a look </div>
+      </div>
+    </div>
+    
+    
+  <div class="recipes-element bounce-up cf">
+      <div class="subject development">
+        <div class="category-color"></div>
+        
+        <div class="header cf">
+          <%= image_tag("groupe_pois.png", class: "img_recipe" ) %> 
+
+          <h6 class="info"><i class="fa fa-calendar-o"></i> COOK TIME : </br> 15-25mins</h4>
+          <h6 class="info"><i class="fa fa-folder-o"></i> NUTRITION : </br> Est. 710 calories</h4>
+        </div>
+        <h3 class="title_recipes">Chicken ginger </br>and sunny veggies</h3>
+        <div class="text_courant"> Tonight’s dinner is adapted from the winning dish seen in Bravo’s Top Chef Season 14 finale. </div>
+        <div class="enrole">take a look </div>
+      </div>
+    </div>
+ 
+
+</div>
 <h1><%= link_to "Add New recipe", new_recipe_path %></h1>
+
+
+
+<script>
+var $animation_elements = $('.recipes-element');
+var $window = $(window);
+
+function check_if_in_view() {
+  var window_height = $window.height();
+  var window_top_position = $window.scrollTop();
+  var window_bottom_position = (window_top_position + window_height);
+
+  $.each($animation_elements, function() {
+    var $element = $(this);
+    var element_height = $element.outerHeight();
+    var element_top_position = $element.offset().top;
+    var element_bottom_position = (element_top_position + element_height);
+
+    //check to see if this current container is within viewport
+    if ((element_bottom_position >= window_top_position) &&
+      (element_top_position <= window_bottom_position)) {
+      $element.addClass('in-view');
+    } else {
+      $element.removeClass('in-view');
+    }
+  });
+}
+
+$window.on('scroll resize', check_if_in_view);
+$window.trigger('scroll');
+</script>
+
+
