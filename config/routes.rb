@@ -15,6 +15,12 @@ Rails.application.routes.draw do
   get "/sign_up" => "clearance/users#new", as: "sign_up"
 
   resources :recipes do
+    collection do
+      get :gout
+      get :hypertension
+      get :diabetes
+      get :weight
+      end
     member do
       get "like", to: "recipes#upvote"
       get "dislike", to: "recipes#downvote"
