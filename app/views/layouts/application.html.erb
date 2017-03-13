@@ -2,25 +2,83 @@
 <html>
   <head>
     <title>Food</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script>
+       $(function() {
+      $('.scroll-down').click (function() {
+        $('html, body').animate({scrollTop: $('section.ok').offset().top }, 'slow');
+        return false;
+      });
+    }); 
+    </script>
+    <script>
+      var $animation_elements = $('#object');
+      var $window = $(window);
+
+      function check_if_in_view() {
+        var window_height = $window.height();
+        var window_top_position = $window.scrollTop();
+        var window_bottom_position = (window_top_position + window_height);
+       
+        $.each($animation_elements, function() {
+          var $element = $(this);
+          var element_height = $element.outerHeight();
+          var element_top_position = $element.offset().top;
+          var element_bottom_position = (element_top_position + element_height);
+       
+          //check to see if this current container is within viewport
+          if ((element_bottom_position >= window_top_position) &&
+              (element_top_position <= window_bottom_position)) {
+            $element.addClass('in-view');
+          } else {
+            $element.removeClass('in-view');
+          }
+        });
+      }
+
+      $window.on('scroll resize', check_if_in_view);
+      $window.trigger('scroll');
+    </script>
+
   </head>
 
   <body>
-      <% if signed_in? %>
-      Signed in as: <%= current_user.email %>
-      <%= button_to 'Sign out', sign_out_path, method: :delete %>
-    <% else %>
-      <%= link_to 'Sign in', sign_in_path %>
-    <% end %>
 
-    <div id="flash">
-      <% flash.each do |key, value| %>
-        <div class="flash <%= key %>"><%= value %></div>
-      <% end %>
-    </div>
+      <div id="flash">
+          <% flash.each do |key, value| %>
+          <div class="flash <%= key %>"><%= value %></div>
+        <% end %>
+      </div>
+
+
+
+       <nav class="navbar navbar-fixed-top">
+          <div class="container-fluid">
+            <div class="navbar-header">
+            </div>
+            <ul class="nav navbar-nav">
+              <li ><a href="#">FoodLab</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#"><span class="glyphicon"></span> Recipes</a></li>
+              <% if signed_in? %>
+                <li>Signed in as: <%= current_user.email %></li>
+                 <li><%= button_to 'Sign out', sign_out_path, method: :delete %></li>
+              <% else %>
+                <li><%= link_to 'Sign in', sign_in_path %></li>
+              <% end %>
+            
+            </ul>
+        </div>
+      </nav>
+
+
+
+
+
 
     <%= yield %>
   </body>
