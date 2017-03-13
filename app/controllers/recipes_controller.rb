@@ -3,8 +3,27 @@ class RecipesController < ApplicationController
 	before_action :find, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
 	def index
-		@recipes = Recipe.all.order(created_at: :desc)
-		
+		@recipes = Recipe.all.order(created_at: :desc)	
+	end
+
+	def gout
+		@recipes =  Recipe.gout
+		render action: :index
+	end
+
+	def diabetes
+		@recipes =  Recipe.gout
+		render action: :index
+	end
+
+	def weight
+		@recipes =  Recipe.gout
+		render action: :index
+	end
+
+	def hypertension
+		@recipes =  Recipe.gout
+		render action: :index
 	end
 
 	def show
@@ -55,7 +74,7 @@ class RecipesController < ApplicationController
 	private
 
 	def recipe_params
-	params.require(:recipe).permit(:title, :cook_time, :nutrition, :description, :recipe, :direction, :image)
+	params.require(:recipe).permit(:title, :cook_time, :nutrition, :description, :recipe, :direction, :image, :tag)
 	end
 
 	def find
