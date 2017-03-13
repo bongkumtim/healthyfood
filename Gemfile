@@ -8,10 +8,10 @@ end
 
 gem 'clearance', '~> 1.16'
 gem 'simple_form', '~> 3.4'
-gem 'paperclip', '~> 5.1'
-gem 'aws-sdk', '~> 2.8', '>= 2.8.5'
+gem 'paperclip', '~> 5.1' # paperclip gem for file management
+gem 'aws-sdk', '~> 2.8', '>= 2.8.5' # amazon web services gem
 gem 'acts_as_votable', '~> 0.10.0'
-gem 'figaro', '~> 1.1', '>= 1.1.1'
+gem 'figaro', '~> 1.1', '>= 1.1.1'  # env variable to keep sensitive data hidden
 # fog
 gem 'fog', require: 'fog/aws'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
