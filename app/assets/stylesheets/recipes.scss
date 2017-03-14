@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-
 body {
 
   font-family: 'Titillium Web', sans-serif;
@@ -43,14 +42,7 @@ $bold: 600;
 $br: 4px;
 
 
-a {
-  text-decoration:none;
-  color:$main;
-  transition:.5s ease;
-  &:hover {
-    color:$main-dark;
-  }
-}
+
 
 .formumaire {
   background:rgba($form-bg,.9);
@@ -61,51 +53,8 @@ a {
   box-shadow:0 4px 10px 4px rgba($form-bg,.3);
 }
 
-.tab-group {
-  list-style:none;
-  padding:0;
-  margin:0 0 40px 0;
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  li a {
-    display:block;
-    text-decoration:none;
-    padding:15px;
-    background:rgba($gray-light,.25);
-    color:$gray-light;
-    font-size:20px;
-    float:left;
-    width:50%;
-    text-align:center;
-    cursor:pointer;
-    transition:.5s ease;
-    &:hover {
-      background:$main-dark;
-      color:$white;
-    }
-  }
-  .active a {
-    background:$main;
-    color:$white;
-  }
-}
 
-.tab-content > div:last-child {
-  display:none;
-}
-
-
-h1 {
-  text-align:center;
-  color:$body-bg;
-  font-weight:$thin;
-  margin:0 0 40px;
-}
-
-label {
+label, .label {
   position:absolute;
   transform:translateY(6px);
   left:13px;
@@ -134,64 +83,14 @@ label.highlight {
 }
 
 input, textarea {
-  font-size:22px;
-  display:block;
-  width:100%;
-  height:100%;
-  padding:5px 10px;
-  background:none;
-  background-image:none;
+ 
   border:1px solid $gray-light;
   color:$body-bg;
-  border-radius:0;
-  transition:border-color .25s ease, box-shadow .25s ease;
+ 
   &:focus {
     outline:0;
     border-color:$main;
   }
-}
-
-textarea {
-  border:2px solid $gray-light;
-  resize: vertical;
-}
-
-.field-wrap {
-  position:relative;
-  margin-bottom:40px;
-}
-
-.top-row {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-
-  }
-
-}
-
-.button {
-  border:0;
-  outline:none;
-  border-radius:0;
-  padding:15px 0;
-  font-size:2rem;
-  font-weight:$bold;
-  text-transform:uppercase;
-  letter-spacing:.1em;
-  background:$main;
-  color:$white;
-  transition:all.5s ease;
-  -webkit-appearance: none;
-  &:hover, &:focus {
-    background:$main-dark;
-  }
-}
-
-.button-block {
-  display:block;
-  width:100%;
 }
 
 
@@ -490,33 +389,6 @@ textarea {
   width: 100%;
 }
 
-/*.subject.design .category-color,
-.subject.design .icon i {
-  background: #c0392b;
-}
-
-.subject.development .category-color,
-.subject.development .icon i {
-  background: #16a085;
-}
-
-.subject.photography .category-color,
-.subject.photography .icon i {
-  background: #2980b9;
-}
-/*hovering over subject
-
-.subject.development:hover .header i {
-  color: #16a085;
-}
-
-.subject.design:hover .header i {
-  color: #c0392b;
-}
-
-.subject.photography:hover .header i {
-  color: #2980b9;
-}*/
 
 .subject .title {
   margin: 12px 0px;
@@ -566,4 +438,30 @@ textarea {
     margin-bottom: 10px;
     text-align: center;
   }
+}
+
+.nav .btn_delete{
+  font-size: 14px;
+  color: #1ab188;
+  border: none;
+  padding-right: 20px;
+  padding-top: 15px
+}
+.nav p{
+  font-size: 14px;
+  padding-right: 20px;
+  padding-top: 15px
+
+}
+
+
+#comment_content {
+
+ height: 170px;
+}
+
+.string .optional{
+  position: relative;
+  left:0px;
+  top:-20px;
 }

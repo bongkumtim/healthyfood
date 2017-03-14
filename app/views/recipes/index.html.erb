@@ -1,9 +1,9 @@
 <section class="result_all_recipes">
   <div class="container menu_search">
-<%= link_to "Gout", gout_recipes_path %> <br>
-<%= link_to "Hypertension", hypertension_recipes_path %><br>
-<%= link_to "Diabetes", diabetes_recipes_path %><br>
-<%= link_to "Weight", weight_recipes_path %><br>
+    <%= link_to "Gout", gout_recipes_path, :class => "button recipe_tag" %> 
+    <%= link_to "Hypertension", hypertension_recipes_path, :class => "button recipe_tag" %>
+    <%= link_to "Diabetes", diabetes_recipes_path, :class => "button recipe_tag" %>
+    <%= link_to "Weight", weight_recipes_path, :class => "button recipe_tag" %>
   </div>
 </div>
 
@@ -120,11 +120,12 @@
         <div class="enrole">take a look </div>
       </div>
     </div>
- 
+
 
 </div>
-<h1><%= link_to "Add New recipe", new_recipe_path %></h1>
-
+<div class="container">
+ <%= link_to "Add New recipe", new_recipe_path, :class => "button_modal button-block" %>
+ </div>
 
 
 <script>

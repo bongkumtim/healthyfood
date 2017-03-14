@@ -42,14 +42,14 @@
           <div class="top-row">
             <div class="field-wrap">
               <label>
-                Name<span class="req">*</span>
+                First name<span class="req">*</span>
               </label>
               <input type="text" required autocomplete="off" />
             </div>
         
             <div class="field-wrap">
               <label>
-                adress<span class="req">*</span>
+                Last name<span class="req">*</span>
               </label>
               <input type="text"required autocomplete="off"/>
             </div>
@@ -61,10 +61,16 @@
             </label>
             <input type="email"required autocomplete="off"/>
           </div>
+           <div class="field-wrap">
+            <label>
+              Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
           
           <div class="field-wrap">
             <label>
-              Set A Password<span class="req">*</span>
+              Allergy<span class="req">*</span>
             </label>
             <input type="password"required autocomplete="off"/>
           </div>
@@ -84,8 +90,7 @@
   <div class="container"> 
   <h2><%= "Comment".pluralize(@recipe.comments.count) %> </h2>
     <% @comments.each do |comment| %>
-    <p> <%= comment.user.email %> </p>
-    <p> <%= comment.content %> </p>
+     <div><%= comment.user.email %> : <%= comment.content %> </div>
     <% end %>
     <%= render 'comments/form' %>
 

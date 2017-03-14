@@ -60,26 +60,37 @@
             <div class="navbar-header">
             </div>
             <ul class="nav navbar-nav">
-              <li ><a href="#">FoodLab</a></li>
+            <li><p><%= link_to 'FoodLab', users_path %></p></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#"><span class="glyphicon"></span> Recipes</a></li>
+              <li><p><%= link_to 'Recipes', recipes_path %></p></li>
               <% if signed_in? %>
-                <li>Signed in as: <%= current_user.email %></li>
-                 <li><%= button_to 'Sign out', sign_out_path, method: :delete %></li>
+               <li><%= button_to 'Sign out', sign_out_path,:class => "btn_delete", method: :delete %></li>
+                <li><p>Hello, <%= current_user.email %></p></li>
+               
               <% else %>
-                <li><%= link_to 'Sign in', sign_in_path %></li>
+
+                <li><p><%= link_to 'Sign in', sign_in_path %></p></li>
+                 <li><p><%= link_to 'Sign up', sign_up_path, :class => "btn_sign" %></p></li>
+                
+               
               <% end %>
-            
             </ul>
         </div>
       </nav>
 
+    
 
 
 
 
 
     <%= yield %>
+   
   </body>
+  <footer class="footer" >
+       <div class="container container_footer">
+       hello
+       </div>
+  </footer>
 </html>

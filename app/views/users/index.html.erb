@@ -1,14 +1,20 @@
 
 <div id="slider">
   <figure>
+    <image>
     <img src="http://www.kmeta.bg/wp-content/uploads/2016/10/hrana2.jpg" alt>
     <img src="http://2.bp.blogspot.com/_dUQtiW6VmHY/TIIt7YO8uHI/AAAAAAAAAcI/lWTB32TE5x4/s1600/gevuldecourgettes1.jpg" alt>
     <img src="http://images.medicaldaily.com/sites/medicaldaily.com/files/styles/headline/public/2015/09/13/healthy-food.jpg" alt>
     <img src="http://images.medicaldaily.com/sites/medicaldaily.com/files/styles/full_breakpoints_theme_medicaldaily_desktop_1x/public/2015/04/09/oatmeal-fruit-and-cinnamon.jpg" alt>
     <img src="http://www.kmeta.bg/wp-content/uploads/2016/10/hrana2.jpg" alt>
+
   </figure>
   <p>SCROLL DOWN</p>
   <a href="#" class="scroll-down" address="true"></a>
+    <%= image_tag("titre.png", class: "sur_titre") %>
+
+
+
 </div>
 
 
@@ -36,10 +42,10 @@
           <h2>Choose a Diet :</h2>
         </div>
         <div class="modal-body">
-<%= link_to "Gout", gout_recipes_path %> <br>
-<%= link_to "Hypertension", hypertension_recipes_path %><br>
-<%= link_to "Diabetes", diabetes_recipes_path %><br>
-<%= link_to "Weight", weight_recipes_path %><br>
+        <%= link_to "Gout", gout_recipes_path, :class => "button_modal button-block space_modal" %>
+        <%= link_to "Hypertension", hypertension_recipes_path, :class => "button_modal button-block space_modal" %>
+        <%= link_to "Diabetes", diabetes_recipes_path, :class => "button_modal button-block space_modal" %>        
+        <%= link_to "Weight", weight_recipes_path, :class => "button_modal button-block space_modal" %>
       
         </div>
        
@@ -81,24 +87,10 @@
     <div class="container" >
     <div class="row">
         <div class="col-sm-3 col-md-4 animation-element slide-left testimonial">
-          <div class="header">
-            <div class="left">
-              <img src="http://drive.google.com/uc?export=download&id=0B7UPM0QugWUjVTdZcktRTWhNamM" />
-            </div>
-            <div class="right">
-              <h3>Johnathon Richard Smith</h3>
-              <h4>CEO / Manager - Auto Incorporated</h4>
-            </div>
+          <div class="content ">
+           <%= image_tag("carotte_graphic.png", class: "haut" ) %>
           </div>
-          <div class="content"><i class="fa fa-quote-left"></i> When I started using their service I was skeptical. They promised me a 300% return on my initial investment. However they came through on their word and now my business is flourishing.. <i class="fa fa-quote-right"></i>
-          </div>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o"></i>
-          </div>
+        
         </div>
 
 
@@ -119,7 +111,7 @@
 
 </section>
 
-<section class="how">
+<section class="how ok">
      
     <div class="container">
     <!--Row with three equal columns-->
@@ -129,25 +121,10 @@
                 <div class="col-md-4 txt">Venihitata pos poratae nusam, odi cus qui aut poreptint volut abor aspel eossum, erchitis dollitios molla sum is ea consenimi, simo velent et, tore evelenisim ipsam faciam et ut denis autem nis repro debitae mi, ad qui quunt hilibus Venihitata pos poratae nusam, odi cus qui aut poreptint volut abor aspel eossum, erchitis dollitios molla sum is ea consenimi, simo velent et, tore evelenisim ipsam faciam et ut denis autem nis repro debitae mi, ad qui quunt hilibus</div>
 
                 <div class="col-md-6 txt animation-element slide-right testimonial">  
-                <div class="header">
-
-                  <div class="left">
-                      <img src="http://drive.google.com/uc?export=download&id=0B7UPM0QugWUjVTdZcktRTWhNamM" />
+              
+                <div class="content">
                   </div>
-                  <div class="right">
-                    <h3>Johnathon Richard Smith</h3>
-                    <h4>CEO / Manager - Auto Incorporated</h4>
-                  </div>
-                </div>
-                <div class="content"><i class="fa fa-quote-left"></i> When I started using their service I was skeptical. They promised me a 300% return on my initial investment. However they came through on their word and now my business is flourishing.. <i class="fa fa-quote-right"></i>
-                  </div>
-                  <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half-o"></i>
-                  </div>
+                 <%= image_tag("dietetika.png") %>
                 </div>
                 </div>
 
@@ -171,24 +148,11 @@
     <div class="container" >
     <div class="row">
         <div class="col-sm-3 col-md-4 animation-element slide-left testimonial">
-          <div class="header">
-            <div class="left">
-              <img src="http://drive.google.com/uc?export=download&id=0B7UPM0QugWUjVTdZcktRTWhNamM" />
-            </div>
-            <div class="right">
-              <h3>Johnathon Richard Smith</h3>
-              <h4>CEO / Manager - Auto Incorporated</h4>
-            </div>
+         
+          <div class="content">
+            <%= image_tag("tup.jpg", class: "bas" ) %>
           </div>
-          <div class="content"><i class="fa fa-quote-left"></i> When I started using their service I was skeptical. They promised me a 300% return on my initial investment. However they came through on their word and now my business is flourishing.. <i class="fa fa-quote-right"></i>
-          </div>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o"></i>
-          </div>
+         
         </div>
 
 

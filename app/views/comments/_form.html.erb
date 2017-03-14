@@ -1,4 +1,4 @@
-<%= simple_form_for([@recipe, @recipe.comments.build]) do |f| %>
-<%= f.input :content %>
-<%= f.button :submit %>
+<%= simple_form_for([@recipe, @recipe.comments.build], :html => {:class => "space"}) do |f| %>
+<%= f.input :content, :class => "size_box" %>
+<%= f.button :submit, :class => 'button space' %>
 <% end %>
