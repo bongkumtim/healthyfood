@@ -10,7 +10,7 @@
    <!--Row with two columns divided in 1:2 ratio-->
    <div class="container "> 
     <div class="row ">
-        <%= image_tag @recipe.image.url(:medium), class: "col-sm-4 img_recipe"%>
+        <%= image_tag @recipe.image.url, class: "col-sm-4 img_recipe"%>
         <div class="col-sm-4 no-margin"> <p class="title_info">INFORMATIONS ABOUT YOUR DISH :</p>
             <div class="row details no-margin">
                 <div class="col-xs-12 no-margin"> <span class="glyphicon glyphicon-time"></span><%= @recipe.cook_time %><span class="glyphicon glyphicon-stats"></span><%=  @recipe.nutrition %></div>

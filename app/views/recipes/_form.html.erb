@@ -1,43 +1,51 @@
 <%= form_for(@recipe, :html => { :multipart => true }) do |f| %>
 
 <div class="file-field">
+  <%= f.label :image %>
   <%= f.file_field :image, multiple: true %>
 </div>
 
 <div class="text-field">
+  <%= f.label :title %>
   <%= f.text_field :title, type: 'title' %>
 </div>
 
 <div class="text-field">
+  <%= f.label :description %>
   <%= f.text_field :description, type: 'description' %>
 </div>
 
 <div class="text-field">
+  <%= f.label :cook_time %>
   <%= f.number_field :cook_time, type: 'cook time' %>
 </div>
 
 <div class="text-field">
+  <%= f.label :price %>
   <%= f.number_field :price, type: 'price (MYR)' %>
 </div>
 
 <div class="text-field">
+  <%= f.label :nutrition %>
   <%= f.text_field :nutrition, type: 'nutrition' %>
 </div>
 
 <div class="text-area">
+  <%= f.label :recipe %>
   <%= f.text_area :recipe, type: 'recipe' %>
 </div>
 
 <div class="text-area">
+  <%= f.label :direction %>
   <%= f.text_area :direction, type: 'direction' %>
 </div>
 
 <div class="text-field">
+  <%= f.label :tag %>
   <%= f.text_field :tag, type: 'tag' %>
 </div>
 
 <div class="submit-field">
-    <%= f.submit %>
+    <%= form.submit %>
 </div>
-
 <% end %>
