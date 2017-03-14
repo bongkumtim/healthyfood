@@ -1,11 +1,43 @@
-<%= simple_form_for (@recipe, :html => { :multipart => true }) do |f| %>
-<%= f.file_field :image %>
-<%= f.input :title %>
-<%= f.input :description %>
-<%= f.input :cook_time %>
-<%= f.input :nutrition %>
-<%= f.input :recipe %>
-<%= f.input :direction %>
-<%= f.input :tag %>
-<%= f.button :submit %>
+<%= form_for(@recipe, :html => { :multipart => true }) do |f| %>
+
+<div class="file-field">
+  <%= f.file_field :image, multiple: true %>
+</div>
+
+<div class="text-field">
+  <%= f.text_field :title, type: 'title' %>
+</div>
+
+<div class="text-field">
+  <%= f.text_field :description, type: 'description' %>
+</div>
+
+<div class="text-field">
+  <%= f.number_field :cook_time, type: 'cook time' %>
+</div>
+
+<div class="text-field">
+  <%= f.number_field :price, type: 'price (MYR)' %>
+</div>
+
+<div class="text-field">
+  <%= f.text_field :nutrition, type: 'nutrition' %>
+</div>
+
+<div class="text-area">
+  <%= f.text_area :recipe, type: 'recipe' %>
+</div>
+
+<div class="text-area">
+  <%= f.text_area :direction, type: 'direction' %>
+</div>
+
+<div class="text-field">
+  <%= f.text_field :tag, type: 'tag' %>
+</div>
+
+<div class="submit-field">
+    <%= f.submit %>
+</div>
+
 <% end %>
