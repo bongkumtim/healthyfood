@@ -5,7 +5,7 @@ class Recipe < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   acts_as_votable
 
-  scope :gout, 					->{ where.not(tag: "protien")} 
+  scope :gout, 					->{ where.not(tag: "protein")} 
   scope :hypertension, 	->{ where.not(tag: "salt")} 
   scope :diabetes, 			->{ where.not(tag: "sugar")} 
   scope :weight, 					->{ where.not(tag: "fat")} 
