@@ -13,7 +13,8 @@
         <%= image_tag @recipe.image.url(:medium), class: "col-sm-4 img_recipe"%>
         <div class="col-sm-4 no-margin"> <p class="title_info">INFORMATIONS ABOUT YOUR DISH :</p>
             <div class="row details no-margin">
-                <div class="col-xs-12 no-margin"> <span class="glyphicon glyphicon-time"></span><%= @recipe.cook_time %><span class="glyphicon glyphicon-stats"></span><%=  @recipe.nutrition %></div>
+                <div class="col-xs-12 no-margin"> <span class="glyphicon glyphicon-time"></span><%= @recipe.cook_time %></div>
+                <div class="col-xs-12 no-margin"> <span class="glyphicon glyphicon-stats"></span><%=  @recipe.nutrition %></div>
             </div>
             <div class="row details no-margin">
                 <div class="col-xs-12 no-margin "><%= @recipe.description %></div>
