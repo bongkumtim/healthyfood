@@ -5,13 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
-gem 'clearance', '~> 1.16'
-gem 'simple_form', '~> 3.4'
-gem 'paperclip', '~> 5.1'
-gem 'aws-sdk', '~> 2.8', '>= 2.8.5'
-gem 'acts_as_votable', '~> 0.10.0'
-gem 'figaro', '~> 1.1', '>= 1.1.1'
 # fog
 gem 'fog', require: 'fog/aws'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -41,6 +34,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'clearance', '~> 1.16'
+gem 'simple_form', '~> 3.4'
+gem 'paperclip', '~> 5.1'
+gem 'aws-sdk', '~> 2.8', '>= 2.8.5'
+gem 'acts_as_votable', '~> 0.10.0'
+gem 'figaro', '~> 1.1', '>= 1.1.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
