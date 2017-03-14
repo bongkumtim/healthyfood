@@ -1,11 +1,11 @@
-<%= simple_form_for @recipe do |f| %>
-<%= f.input :image %>
+<%= simple_form_for (@recipe, :html => { :multipart => true }) do |f| %>
+<%= f.file_field :image %>
 <%= f.input :title %>
+<%= f.input :description %>
 <%= f.input :cook_time %>
 <%= f.input :nutrition %>
-<%= f.input :description %>
-<%= f.input :direction %>
 <%= f.input :recipe %>
+<%= f.input :direction %>
 <%= f.input :tag %>
 <%= f.button :submit %>
 <% end %>
