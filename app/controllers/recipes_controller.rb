@@ -12,17 +12,17 @@ class RecipesController < ApplicationController
 	end
 
 	def diabetes
-		@recipes =  Recipe.gout
+		@recipes =  Recipe.diabetes
 		render action: :index
 	end
 
 	def weight
-		@recipes =  Recipe.gout
+		@recipes =  Recipe.weight
 		render action: :index
 	end
 
 	def hypertension
-		@recipes =  Recipe.gout
+		@recipes =  Recipe.hypertension
 		render action: :index
 	end
 
@@ -74,7 +74,7 @@ class RecipesController < ApplicationController
 	private
 
 	def recipe_params
-	params.require(:recipe).permit(:title, :cook_time, :nutrition, :description, :recipe, :direction, :image, :tag)
+	params.require(:recipe).permit(:title, :cook_time, :nutrition, :description, :recipe, :direction, :image, :tag, :price)
 	end
 
 	def find
