@@ -14,25 +14,31 @@
 
   </div>
   <div class="container cf">
+
     <!-- Course 1 -->
     <% @recipes.each do |recipe| %>
     <div class="recipes-element bounce-up cf">
       <div class="subject development">
-        <div class="category-color"></div>
-        <div class="header cf">
-          <%= link_to (image_tag recipe.image.url(:medium), class: "img_recipe" ), recipe_path(recipe) %>
-
-          <h3 class="title_recipes"><%= recipe.title %></h3>
-           <div class="text_courant"><%= recipe.description %></div>
-          <h6 class="info"><i class="fa fa-calendar-o"></i> COOK TIME : </br><%= recipe.cook_time %></h4>
-          <h6 class="info"><i class="fa fa-folder-o"></i> NUTRITION : </br><%= recipe.nutrition %></h4>
-          <h6 class="info"><i class="fa fa-folder-o"></i> PRICE (MYR) : </br><%= recipe.price %></h4>
-          <h6 class="info"> COMMENT : </br> <%= recipe.comments.count %></h6>
+        <div >
+        <div class="picture" style="background-image: url('<%= recipe.image.url %>');">
         </div>
-        
+
+
+        <p class="comment"><span><%= recipe.comments.count %></span> COMMENTS | <span><%= recipe.get_upvotes.size %></span> LIKE</p>
+        <h3 class="title_recipes"><%= recipe.title %></h3>
+        <div class="text_courant"> Tonight’s dinner is adapted from the winning dish seen in Bravo’s Top Chef Season 14 finale. </div>
+
+        <h6 class="info"><span> COOK TIME : </span></br><%= recipe.cook_time %></h6>
+        <h6 class="info"><span> NUTRITION :</span> </br><%= recipe.nutrition %></h6> 
+        </div>
+
+
+        <div >
         <%= link_to "take a look", recipe_path(recipe.id) , :class => "enrole" %>
-        <p><%= recipe.get_upvotes.size %> Like </p>
+        
+        </div>
       </div>
+
     </div>
 
     <% end %>
@@ -40,6 +46,33 @@
 
 
     <!-- hardcodded recipes -->
+     <% @recipes.each do |recipe| %>
+    <div class="recipes-element bounce-up cf">
+      <div class="subject development">
+        <div >
+        <div class="picture" style=" background-image: url('/assets/diet_receipe1.png');">
+        </div>
+
+
+        <p class="comment"><span><%= recipe.comments.count %></span> COMMENTS | <span><%= recipe.get_upvotes.size %></span> LIKE</p>
+        <h3 class="title_recipes"><%= recipe.title %></h3>
+        <div class="text_courant"> Tonight’s dinner is adapted from the winning dish seen in Bravo’s Top Chef Season 14 finale. </div>
+
+        <h6 class="info"><span> COOK TIME : </span></br><%= recipe.cook_time %></h6>
+        <h6 class="info"><span> NUTRITION :</span> </br><%= recipe.nutrition %></h6> 
+        </div>
+
+
+       
+      </div>
+
+    </div>
+
+    <% end %>
+
+
+
+
     <div class="recipes-element bounce-up cf">
       <div class="subject development">
         <div class="category-color"></div>
@@ -105,6 +138,24 @@
         <div class="enrole">take a look </div>
       </div>
     </div>
+    
+    
+  <div class="recipes-element bounce-up cf">
+      <div class="subject development">
+        <div class="category-color"></div>
+        
+        <div class="header cf">
+          <%= image_tag("groupe_pois.png", class: "img_recipe" ) %> 
+
+          <h6 class="info"><i class="fa fa-calendar-o"></i> COOK TIME : </br> 15-25mins</h4>
+          <h6 class="info"><i class="fa fa-folder-o"></i> NUTRITION : </br> Est. 710 calories</h4>
+        </div>
+        <h3 class="title_recipes">Chicken ginger </br>and sunny veggies</h3>
+        <div class="text_courant"> Tonight’s dinner is adapted from the winning dish seen in Bravo’s Top Chef Season 14 finale. </div>
+        <div class="enrole">take a look </div>
+      </div>
+    </div>
+
 
 </div>
 <div class="container">

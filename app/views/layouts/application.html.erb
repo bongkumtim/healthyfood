@@ -6,6 +6,7 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
        $(function() {
       $('.scroll-down').click (function() {
@@ -60,18 +61,19 @@
             <div class="navbar-header">
             </div>
             <ul class="nav navbar-nav">
-            <li><p><%= link_to 'FoodLab', users_path %></p></li>
+            <li><%= link_to image_tag("apple.gif", class:"logogif"), users_path %></li>
+            <li><p class="brand"><%= link_to 'FoodLab', users_path %></p></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><p><%= link_to 'Recipes', recipes_path %></p></li>
+              <li><p class="signet"><%= link_to 'Recipes', recipes_path %></p></li>
               <% if signed_in? %>
-               <li><%= button_to 'Sign out', sign_out_path,:class => "btn_delete", method: :delete %></li>
-                <li><p>Hello, <%= current_user.email %></p></li>
+               <li><%= button_to 'Sign out', sign_out_path,:class => "btn_delete signet", method: :delete %></li>
+                <li><p class="signet">Hello, <%= current_user.email %></p></li>
                
               <% else %>
 
-                <li><p><%= link_to 'Sign in', sign_in_path %></p></li>
-                 <li><p><%= link_to 'Sign up', sign_up_path, :class => "btn_sign" %></p></li>
+                <li><p><%= link_to 'Sign in', sign_in_path, :class => "signet"  %></p></li>
+                 <li><p><%= link_to 'Sign up', sign_up_path, :class => "btn_sign signet" %></p></li>
                 
                
               <% end %>
@@ -88,9 +90,34 @@
     <%= yield %>
    
   </body>
-  <footer class="footer" >
-       <div class="container container_footer">
-       hello
-       </div>
-  </footer>
+ <footer class="footer" >
+      <div class="container">
+   <div class="row">
+     <div class="col-md-4 col-sm-6 footerleft ">
+       <h6 class="heading7 text-center ">FOODLUB CUSTOMER SERVICE</h6>
+       <p>Contact Us 800-243-0852 <br> Shipping Returns & Exchanges Guarantee FAQ 210, Aggarwal Tower, Rohini sec 9, Kuala Lumpur - 110085, Malaysia <br> E-mail : info@webenlance.com</p>
+       
+     </div>
+     <div class="col-md-4 col-sm-6 paddingtop-bottom">
+       <h6 class="heading7 text-center">GENERAL LINKS</h6>
+       <ul class="footer-ul text-center">
+       
+         <li><a href="#"> Privacy Policy</a></li>
+         <li><a href="#"> Terms & Conditions</a></li>
+     
+         <li><a href="#"> Frequently Ask Questions</a></li>
+       </ul>
+     </div>
+     <div class="col-md-3 col-sm-6 paddingtop-bottom text-center">
+       <h6 class="heading7 text-center">LATEST POST</h6>
+       
+   <hr />
+       <div text-center style="color:white">- Facebook.com -</div>
+   <hr />
+     </div>
+     
+   </div>
+ </div>
+</footer>
+</html>
 </html>

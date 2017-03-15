@@ -3,6 +3,58 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.nav .btn_delete{
+  font-size: 14px;
+  color: #a79d83;
+  border: none;
+  padding-right: 20px;
+  padding-top: 15px
+}
+.signet{
+
+  font-size: 14px;
+  padding-right: 20px;
+  padding-top: 15px
+
+}
+
+
+.navbar a{
+        margin-top: 8px
+    } 
+
+.navbar{
+        background-color:$form-bg; 
+        height:60px;
+  
+} 
+
+
+.navbar-nav > li > a {
+ padding-left: 0px;
+ padding-top: 0px;
+ padding-right: 0px;
+ padding-bottom: 0px;
+ margin-right: 10px;
+}
+
+
+.logogif {
+ border-radius: 50%;
+ height: 50px;
+
+
+}
+
+.brand{ 
+  padding-top: 10px;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 700;
+
+  font-size: 26px
+
+}
+
 body {
 
   font-family: 'Titillium Web', sans-serif;
@@ -152,16 +204,6 @@ input, textarea {
 
 }
 
-.navbar a{
-        margin-top: 8px
-
-    } 
-
-.navbar{
-        background-color:$form-bg; 
-        height:60px;
-
-    } 
 
 
 
@@ -219,12 +261,22 @@ input, textarea {
 
 .info{
   float: left;
-  width: 100px;
+  width: 50%;
   text-align: left;
-  display: inline;
+  display: inline-block;
+  font-family: 'Titillium Web', sans-serif;
 
+  font-size: 14px;
+  line-height: 18px;
 }
 
+.info span{
+
+  color: #a79d83;
+  font-weight: 700;
+  font-family: 'Titillium Web', sans-serif;
+
+}
 
 
 .img_recipe{
@@ -440,19 +492,7 @@ input, textarea {
   }
 }
 
-.nav .btn_delete{
-  font-size: 14px;
-  color: #1ab188;
-  border: none;
-  padding-right: 20px;
-  padding-top: 15px
-}
-.nav p{
-  font-size: 14px;
-  padding-right: 20px;
-  padding-top: 15px
 
-}
 
 
 #comment_content {

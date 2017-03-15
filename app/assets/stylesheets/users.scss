@@ -6,13 +6,66 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script');
 @import url('https://fonts.googleapis.com/css?family=Suez+One');
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
 
 
-.footer{
 
-  background-color: grey;
+
+
+.image_circle{
+  
+  height: 600px;
+  background-image: url("dietetika.png");
+  padding-top: 20px; 
+  padding-bottom: 50px;
+
+  background-position:50px 0px;
+  background-repeat: no-repeat;
+  background-size: 80% auto;
 
 }
+
+.image_carotte{
+  
+  height: 500px;
+  background-image: url("carotte_graphic.png");
+
+  background-position:-100px 0px;
+  background-repeat: no-repeat;
+  background-size: 120% auto;
+
+}
+
+.picture{
+
+  height: 300px;
+
+  background-size: cover;
+  background-position:center;
+
+}
+
+.comment{
+  color:green;
+  font-size:10px;
+}
+
+.comment span{
+  color:green;
+  font-size:14px;
+}
+
+
+
+.delivery{
+  background-color: orange;
+}
+
+.delivery_container{
+  margin-top: 140px;
+}
+
+
 .container_footer{
 
   padding-top: 60px;
@@ -52,10 +105,10 @@ body {
 
 a {
   text-decoration:none;
-  color:$main;
+  color:#a79d83;
   transition:.5s ease;
   &:hover {
-    color:$main-dark;
+    color:#a79d83;
   }
 }
 
@@ -344,18 +397,18 @@ input, textarea {
 .animation-element.slide-left.testimonial .haut {
   width:500px;
   position: absolute;
-  top:-50px;
+
   left:-120px;
  
 
 }
-.animation-element.slide-left.testimonial img {
+/*.animation-element.slide-left.testimonial img {
   width: 340px;
   position: absolute;
 
  
 
-}
+}*/
 .animation-element.slide-right.testimonial img {
   width: 600px;
   position: absolute;
@@ -365,17 +418,11 @@ input, textarea {
 
 }
 
-.animation-element.slide-left.testimonial h3, .animation-element.slide-right.testimonial h3 {
-  margin: 0px 0px 5px 0px;
-}
 
-.animation-element.slide-left.testimonial h4, .animation-element.slide-right.testimonial h4 {
-  margin: 0px 0px 5px 0px;
-}
 
 .animation-element.slide-left.testimonial .content, .animation-element.slide-right.testimonial .content  {
   float: left;
-  width:80%;
+
   margin-bottom: 10px;
 }
 
@@ -569,12 +616,15 @@ section.ok{
 }
 .title{
   font-family: 'Suez One', serif;
-  font-size: 52px;
+  font-size: 50px;
+  color: #a79d83;
+
 }
 
 .title span{
   font-family: 'Titillium Web', sans-serif;
   font-size: 50px;
+  color: #a79d83;
 }
 
 #circle {
@@ -583,20 +633,19 @@ section.ok{
     height: 300px;
     border-radius: 50%;
     border-style: dashed;
-    z-index: 1;
-    top:-30px;
-    margin-bottom: 100px;
-
+    padding-bottom: 100px;
+    margin:auto;
 }
 
 
 
 .txt{
 
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Titillium Web', sans-serif;
   font-size: 18px;
 
 }
+
 
 .slogan{ 
   width:90%;
@@ -646,18 +695,17 @@ p{
   -webkit-transition: all .5s ease-in 3s;
   transition: all .5s ease-in 3s;
 }
-.sur_titre {
+.sur_text {
   z-index: 3;
-  position: absolute;
-  top: 170px;
-  left: 25%;
-  margin-left: -16px;
-
-
+  position:absolute;
+  bottom:200px;
+  left:50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
 }
-.scroll-down, .sur_text {
+.scroll-down {
   position: absolute;
-  bottom: 30px;
+  bottom: 25px;
   left: 50%;
   margin-left: -16px;
   display: block;
@@ -708,8 +756,31 @@ p{
   }
 }
 
+.footer{
+
+  background-color: #a79d83;
+
+}
+
+footer { background-color:#0c1a1e ; font-family: 'Open Sans', sans-serif; }
+.footerleft { margin-top:50px; margin-right: 20px; padding:0 35PX; }
+.logofooter { margin-bottom:10px; font-size:25px; color:#fff; font-weight:700;}
+
+.footerleft p { color:#fff; font-size:12px !important; font-family: 'Open Sans', sans-serif;}
+.footerleft p i { width:20px; color:#999;}
 
 
+.paddingtop-bottom {  margin-top:50px;}
+.footer-ul { list-style-type:none;  padding-left:0px;  margin-right:10px; margin-left:20px;}
+.footer-ul li { line-height:29px; font-size:12px;}
+.footer-ul li a { color:white; transition: color 0.2s linear 0s, background 0.2s linear 0s; }
+.footer-ul i { margin-right:20px;}
+.footer-ul li a:hover {transition: color 0.2s linear 0s, background 0.2s linear 0s; color:#ff670f ; }
+
+
+.heading7 { font-size:21px; font-weight:700; color:#d9d6d6 ; margin-bottom:22px;}
+.post p { font-size:12px; color:#FFF; line-height:20px;}
+.post p span { display:block; color:#8f8f8f ;}
 
 
 
