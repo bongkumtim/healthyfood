@@ -1,14 +1,25 @@
 class PostsController < ApplicationController
 
+	def index
+		@recipes = Recipe.all.order(created_at: :desc)
+	end
+
 	def show
 	end
 
-	def one
+	def gout
+		@recipes = Recipe.gout
+		render action: :gout
 	end
 
-	def two
+	def hypertension
 	end
 
-	def three
+	def diabetes
+		@recipes = Recipe.diabetes
+		render action: :diabetes
+	end
+
+	def weight
 	end
 end
