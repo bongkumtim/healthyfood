@@ -26,7 +26,9 @@ class ReservationsController < ApplicationController
 	def hypertension_four
 	end
 
-	def diabetes_one
+	def diabone
+		render "reservations/diabone"  
+
 	end
 
 	def diabetes_two

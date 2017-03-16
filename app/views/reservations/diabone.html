@@ -70,8 +70,7 @@
             </div>
             <div class="row details no-margin">
                 <div class="col-xs-12 no-margin "> 0 Likes | 0 Dislike </div>
-                <%= link_to "Like", like_recipe_path(@recipe), method: :get %>  | 
-                <%= link_to "Dislike", dislike_recipe_path(@recipe), method: :get %>
+               
             </div>
       
         </div>
@@ -134,11 +133,6 @@
   <div class="container"> 
   
 
-
-
-    <%= link_to "Edit", edit_recipe_path(@recipe) %>
-    <%= link_to "Home", root_path %>
-    <%= link_to "Delete", recipe_path(@recipe), method: :delete, data: {Confirm: "Are you sure"} %>
 
 
   </div>
