@@ -240,9 +240,11 @@ input, textarea {
   background:$main;
   color:$white;
   transition:all.5s ease;
+  text-align:center;
   -webkit-appearance: none;
   &:hover, &:focus {
     background:$main-dark;
+    text-align:center;
   }
 }
 

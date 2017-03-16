@@ -1,21 +1,163 @@
-<section>
-this is confirmation
 
 
-<div class="container">
-
-<div class="jumbotron confpage">
-   <h1>ORDER PENDING</h1>  
-   <hr />
-   <h2>Kai Huat<br>kai_huat@gmail.com</h2>
-   <hr />
-   <h2>711 East Coast Road, <br>Kuala Lumpur, 459065, <br>Malaysia</h2>
-   <hr />
-   <h2>Order <span class="flr">1</span> <br><br></h2>
-   <hr />
-   <h2>Amount (MYR) <span class="flr">25</span> <br><br></h2>
-   <hr />
-   <h2>Reservation Code <span class="flr">HMWWBEPPZ4</span> <br><br></h2><br>
-   </div>      
+<section class="clear_top">
+  <div class="container">
+      <h2 class="title_recip">Blood Orange and Duck Confit Salad</h2>
+  </div>
 </div>
-</section>
+
+<section class="details">
+   <!--Row with two columns divided in 1:2 ratio-->
+   <div class="container "> 
+    <div class="row ">
+      <div class="col-sm-4"><img src="/assets/gout_receipe1.png" height="350" width="325"></div>
+        
+        <div class="col-sm-4 no-margin"> <p class="title_info">INFORMATIONS ABOUT YOUR DISH :</p>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin"> <span class="glyphicon glyphicon-time"></span> 10 mins<br><span class="glyphicon glyphicon-stats"></span> calories: 225kcal. fat: 10g. carbohydrates: 18g. protein: 15g.</div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin", style="text-align: justify;">Australian Gourmet Traveller recipe for duck, orange and beetroot salad.</div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin", style="text-align: justify;">
+                  1. 1 tablespoon sherry vinegar <br>
+                  2. 4 blood oranges, divided (3 sectioned, about 1 cup; 1 juiced, about 1/4 cup) <br>
+                  3. 1 teaspoon Dijon mustard <br>
+                  4. 1 tablespoon olive oil <br>
+                  5. 1/4 teaspoon salt <br>
+                  6. 1/4 teaspoon pepper <br>
+                  7. 1 small duck confit leg (5-6 ounces), shredded, skin, fat, and bones discarded (about 3/4 cup)<br>
+                  8. 6 cups mixed winter salad greens (such as romaine, escarole, and spinach) <br>
+                  9. 1/4 cup skinned chopped hazelnuts, toasted  <br>
+                </div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin" style="text-align: justify;">
+                  <b>Direction</b><br>
+                  1. In a small bowl, combine vinegar, orange juice, mustard, and oil, whisking well. Whisk in salt and pepper.<br>
+                  2.  In a large bowl, combine shredded duck, salad greens, hazelnuts, and orange sections. Drizzle with vinaigrette; serve.<br>
+                </div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin "> 0 Likes | 0 Dislike </div>
+                <%= link_to "Like", like_recipe_path(@recipe), method: :get %>  | 
+                <%= link_to "Dislike", dislike_recipe_path(@recipe), method: :get %>
+            </div>
+      
+        </div>
+        <div class="col-sm-4 pre_payment_form "> 
+            <div class="row full_color">
+                <div class="col-m-12 price">RM15 </div>
+            </div>
+
+
+          <form class="space" action="/" method="post">
+          
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                First name<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off" />
+            </div>
+        
+            <div class="field-wrap">
+              <label>
+                Last name<span class="req">*</span>
+              </label>
+              <input type="text"required autocomplete="off"/>
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+           <div class="field-wrap">
+            <label>
+              Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Allergy<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+          
+          <button type="submit" class="button button-block"/>Order here</button>
+          
+          </form>
+        </div>
+     
+
+    </div>
+  </div>
+</div>
+
+
+<section class="recipes">
+  <div class="container"> 
+  
+
+
+
+    <%= link_to "Edit", edit_recipe_path(@recipe) %>
+    <%= link_to "Home", root_path %>
+    <%= link_to "Delete", recipe_path(@recipe), method: :delete, data: {Confirm: "Are you sure"} %>
+
+
+  </div>
+</div>
+
+<script> 
+$('.pre_payment_form').find('input, textarea').on('keyup blur focus', function (e) {
+  
+  var $this = $(this),
+      label = $this.prev('label');
+
+    if (e.type === 'keyup') {
+      if ($this.val() === '') {
+          label.removeClass('active highlight');
+        } else {
+          label.addClass('active highlight');
+        }
+    } else if (e.type === 'blur') {
+      if( $this.val() === '' ) {
+        label.removeClass('active highlight'); 
+      } else {
+        label.removeClass('highlight');   
+      }   
+    } else if (e.type === 'focus') {
+      
+      if( $this.val() === '' ) {
+        label.removeClass('highlight'); 
+      } 
+      else if( $this.val() !== '' ) {
+        label.addClass('highlight');
+      }
+    }
+
+});
+
+$('.tab a').on('click', function (e) {
+  
+  e.preventDefault();
+  
+  $(this).parent().addClass('active');
+  $(this).parent().siblings().removeClass('active');
+  
+  target = $(this).attr('href');
+
+  $('.tab-content > div').not(target).hide();
+  
+  $(target).fadeIn(600);
+  
+});
+</script>
+
