@@ -8,22 +8,22 @@ class RecipesController < ApplicationController
 
 	def gout
 		@recipes =  Recipe.gout
-		render action: :index
+		render action: :gout
 	end
 
 	def diabetes
 		@recipes =  Recipe.diabetes
-		render action: :index
+		render action: :diabetes
 	end
 
 	def weight
 		@recipes =  Recipe.weight
-		render action: :index
+		render action: :weight
 	end
 
 	def hypertension
 		@recipes =  Recipe.hypertension
-		render action: :index
+		render action: :hypertension
 	end
 
 	def show
@@ -36,7 +36,7 @@ class RecipesController < ApplicationController
 
 	def create
 		@recipe = current_user.recipes.build(recipe_params)
-
+		
 		if @recipe.save
 			redirect_to @recipe
 		else

@@ -1,0 +1,164 @@
+
+
+<section class="clear_top">
+  <div class="container">
+      <h2 class="title_recip">Acai Berry Smoothie Bowl</h2>
+  </div>
+</div>
+
+<section class="details">
+   <!--Row with two columns divided in 1:2 ratio-->
+   <div class="container "> 
+    <div class="row ">
+      <div class="col-sm-4"><img src="/assets/diet_receipe1.png" height="300" width="325"></div>
+        
+        <div class="col-sm-4 no-margin"> <p class="title_info">INFORMATIONS ABOUT YOUR DISH :</p>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin"> <span class="glyphicon glyphicon-time"></span> 10 mins<br><span class="glyphicon glyphicon-stats"></span> calories: 460kcal. fat: 14g. carbohydrates: 75g. protein: 10g.</div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin", style="text-align: justify;">A thick, rich, and creamy acai berry bowl full of antioxidant rich acai berries and raw fruits and vegetables</div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin", style="text-align: justify;">
+                  1. 1 packet of frozen organic acai berry pulp <br>
+                  2. 2 heaping handfuls of organic spinach <br>
+                  3. 1 frozen banana <br>
+                  4. ½ cup coconut milk, unsweetened <br>
+                  5. 2 tablespoons of chia seeds (soaked for at least 20 minutes in some of the coconut milk) <br>
+                  6. dash of cinnamon <br>
+                  7. ice as needed to thicken<br>
+                
+                </div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin" style="text-align: justify;">
+                  <b>Direction</b><br>
+                  1. Add all ingredients into blender until thick and creamy. <br>
+                  2. The texture should be very thick, if too thick then add more almond or coconut milk. <br>
+                  3. If you stick a spoon into the mixture the mixture should be able to be thick enough to stay on the spoon, if not add ice or more frozen bananas. <br>
+                  4. Eat after making. Enjoy!<br>
+                </div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin "> 10 Likes | 0 Dislike </div>
+                <%= link_to "Like", like_recipe_path(@recipe), method: :get %>  | 
+                <%= link_to "Dislike", dislike_recipe_path(@recipe), method: :get %>
+            </div>
+      
+        </div>
+        <div class="col-sm-4 pre_payment_form "> 
+            <div class="row full_color">
+                <div class="col-m-12 price">RM10 </div>
+            </div>
+
+
+          <form class="space" action="/" method="post">
+          
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                First name<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off" />
+            </div>
+        
+            <div class="field-wrap">
+              <label>
+                Last name<span class="req">*</span>
+              </label>
+              <input type="text"required autocomplete="off"/>
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+           <div class="field-wrap">
+            <label>
+              Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Allergy<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+          
+          <button type="submit" class="button button-block"/>Order here</button>
+          
+          </form>
+        </div>
+     
+
+    </div>
+  </div>
+</div>
+
+
+<section class="recipes">
+  <div class="container"> 
+  
+
+
+
+    <%= link_to "Edit", edit_recipe_path(@recipe) %>
+    <%= link_to "Home", root_path %>
+    <%= link_to "Delete", recipe_path(@recipe), method: :delete, data: {Confirm: "Are you sure"} %>
+
+
+  </div>
+</div>
+
+<script> 
+$('.pre_payment_form').find('input, textarea').on('keyup blur focus', function (e) {
+  
+  var $this = $(this),
+      label = $this.prev('label');
+
+    if (e.type === 'keyup') {
+      if ($this.val() === '') {
+          label.removeClass('active highlight');
+        } else {
+          label.addClass('active highlight');
+        }
+    } else if (e.type === 'blur') {
+      if( $this.val() === '' ) {
+        label.removeClass('active highlight'); 
+      } else {
+        label.removeClass('highlight');   
+      }   
+    } else if (e.type === 'focus') {
+      
+      if( $this.val() === '' ) {
+        label.removeClass('highlight'); 
+      } 
+      else if( $this.val() !== '' ) {
+        label.addClass('highlight');
+      }
+    }
+
+});
+
+$('.tab a').on('click', function (e) {
+  
+  e.preventDefault();
+  
+  $(this).parent().addClass('active');
+  $(this).parent().siblings().removeClass('active');
+  
+  target = $(this).attr('href');
+
+  $('.tab-content > div').not(target).hide();
+  
+  $(target).fadeIn(600);
+  
+});
+</script>
+

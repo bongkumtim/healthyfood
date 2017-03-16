@@ -1,0 +1,178 @@
+
+
+<section class="clear_top">
+  <div class="container">
+      <h2 class="title_recip">Southwest Salmon and Sweet Potatoes</h2>
+  </div>
+</div>
+
+<section class="details">
+   <!--Row with two columns divided in 1:2 ratio-->
+   <div class="container "> 
+    <div class="row ">
+      <div class="col-sm-4"><img src="/assets/diab_receipe2.png" height="350" width="325"></div>
+        
+        <div class="col-sm-4 no-margin"> <p class="title_info">INFORMATIONS ABOUT YOUR DISH :</p>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin"> <span class="glyphicon glyphicon-time"></span> 45 mins<br><span class="glyphicon glyphicon-stats"></span> calories: 369kcal. fat: 18g. carbohydrates: 21g. protein: 30g.</div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin", style="text-align: justify;">The low-carb dish features salmon, an excellent source of omega-3 fatty acids.</div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin", style="text-align: justify;">
+                  1. 5 - ounces fresh or frozen skinless salmon fillets <br>
+                  2. 12 ounces sweet potatoes, scrubbed and cut crosswise into 1/8- to 1/4-inch-thick slices <br>
+                  3. 2 teaspoons canola oil <br>
+                  4. 1/2 teaspoon dried oregano, crushed <br>
+                  5. 1/2 teaspoon ground ancho chile pepper or chili powder <br>
+                  6. 1/2 teaspoon ground cumin <br>
+                  7. 1/4 teaspoon salt<br>
+                  8. 1/4 teaspoon ground black pepper <br>
+                  9. 1 medium orange, peeled and coarsely chopped  <br>
+                </div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin" style="text-align: justify;">
+                  <b>Direction</b><br>
+                  1. Preheat oven to 350 degrees F.<br>
+                  2. Thaw fish, if frozen. Rinse fish and pat dry with paper towels; set aside.<br>
+                  3. In a medium bowl, toss sweet potato slices with oil. <br>
+                  4. In a small bowl, combine oregano, chile pepper, cumin, salt, and black pepper. Sprinkle 1 teaspoon of the oregano mixture evenly on the salmon. Add remaining oregano mixture to sweet potatoes and toss to coat. <br>
+                  5. Tear off four 18-inch squares of heavy foil. Lightly coat one side of each foil square with nonstick cooking spray. <br>
+                  6. In the center of each foil square, arrange one-fourth of the sweet potato slices, overlapping slightly. <br>
+                  7. Top each sweet potato mound with a salmon fillet and arrange orange pieces atop salmon. <br>
+                  8. For each packet, bring up two opposite edges of a foil square and seal with a double fold. <br>
+                  9. Fold ends to completely enclose fish and vegetables, leaving space for steam to build. <br>
+                  10.Place the packets, seam sides up, on a very large baking sheet.<br>
+                  11.Bake for 30 to 35 minutes or until fish flakes easily when tested with a fork and sweet potatoes are tender.<br>
+                  12.Open the packets carefully when checking doneness. Transfer contents of each packet to a plate.
+
+
+
+
+
+                </div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin "> 0 Likes | 0 Dislike </div>
+                <%= link_to "Like", like_recipe_path(@recipe), method: :get %>  | 
+                <%= link_to "Dislike", dislike_recipe_path(@recipe), method: :get %>
+            </div>
+      
+        </div>
+        <div class="col-sm-4 pre_payment_form "> 
+            <div class="row full_color">
+                <div class="col-m-12 price">RM25 </div>
+            </div>
+
+
+          <form class="space" action="/" method="post">
+          
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                First name<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off" />
+            </div>
+        
+            <div class="field-wrap">
+              <label>
+                Last name<span class="req">*</span>
+              </label>
+              <input type="text"required autocomplete="off"/>
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+           <div class="field-wrap">
+            <label>
+              Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Allergy<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+          
+          <button type="submit" class="button button-block"/>Order here</button>
+          
+          </form>
+        </div>
+     
+
+    </div>
+  </div>
+</div>
+
+
+<section class="recipes">
+  <div class="container"> 
+  
+
+
+
+    <%= link_to "Edit", edit_recipe_path(@recipe) %>
+    <%= link_to "Home", root_path %>
+    <%= link_to "Delete", recipe_path(@recipe), method: :delete, data: {Confirm: "Are you sure"} %>
+
+
+  </div>
+</div>
+
+<script> 
+$('.pre_payment_form').find('input, textarea').on('keyup blur focus', function (e) {
+  
+  var $this = $(this),
+      label = $this.prev('label');
+
+    if (e.type === 'keyup') {
+      if ($this.val() === '') {
+          label.removeClass('active highlight');
+        } else {
+          label.addClass('active highlight');
+        }
+    } else if (e.type === 'blur') {
+      if( $this.val() === '' ) {
+        label.removeClass('active highlight'); 
+      } else {
+        label.removeClass('highlight');   
+      }   
+    } else if (e.type === 'focus') {
+      
+      if( $this.val() === '' ) {
+        label.removeClass('highlight'); 
+      } 
+      else if( $this.val() !== '' ) {
+        label.addClass('highlight');
+      }
+    }
+
+});
+
+$('.tab a').on('click', function (e) {
+  
+  e.preventDefault();
+  
+  $(this).parent().addClass('active');
+  $(this).parent().siblings().removeClass('active');
+  
+  target = $(this).attr('href');
+
+  $('.tab-content > div').not(target).hide();
+  
+  $(target).fadeIn(600);
+  
+});
+</script>
+

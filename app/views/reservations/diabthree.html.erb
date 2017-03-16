@@ -1,0 +1,173 @@
+
+
+<section class="clear_top">
+  <div class="container">
+      <h2 class="title_recip">Lemon Chicken Breast</h2>
+  </div>
+</div>
+
+<section class="details">
+   <!--Row with two columns divided in 1:2 ratio-->
+   <div class="container "> 
+    <div class="row ">
+      <div class="col-sm-4"><img src="/assets/diab_receipe3.png" width="350" height="350" ></div>
+        
+        <div class="col-sm-4 no-margin"> <p class="title_info">INFORMATIONS ABOUT YOUR DISH :</p>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin"> <span class="glyphicon glyphicon-time"></span> 60 mins<br><span class="glyphicon glyphicon-stats"></span> calories: 393kcal. fat: 19.5g. carbohydrates: 3g. protein: 49g.</div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin", style="text-align: justify;">Enjoy the zesty flavor of our Lemon Pepper chicken breasts made from all-natural grade A chicken</div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin", style="text-align: justify;">
+                  1. 1/4 cup olive oil <br>
+                  2. 3 tablespoons minced garlic (9 cloves) <br>
+                  3. 1/3 cup white wine <br>
+                  4. 1 tablespoon grated lemon zest <br>
+                  5. 2 tablespoons freshly squeezed lemon juice <br>
+                  6. 1 1/2 teaspoons dried oregano <br>
+                  7. 1 teaspoon minced fresh thyme leaves<br>
+                  8. Kosher salt and freshly ground black pepper<br>
+                  9. 4 boneless chicken breasts, skin on (6 to 8 ounces each)<br>
+                  10.1 lemon
+                </div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin" style="text-align: justify;">
+                  <b>Direction</b><br>
+                  1. Preheat the oven to 400 degrees F.<br>
+                  2. Warm the olive oil in a small saucepan over medium-low heat, add the garlic, and cook for just 1 minute but don't allow the garlic to turn brown. <br>
+                  3. Off the heat, add the white wine, lemon zest, lemon juice, oregano, thyme, and 1 teaspoon salt and pour into a 9 by 12-inch baking dish. <br>
+                  4. Pat the chicken breasts dry and place them skin side up over the sauce. <br>
+                  5. Brush the chicken breasts with olive oil and sprinkle them liberally with salt and pepper.  <br>
+                  6. Cut the lemon in 8 wedges and tuck it among the pieces of chicken <br>
+                  7. Bake for 30 to 40 minutes, depending on the size of the chicken breasts, until the chicken is done and the skin is lightly browned. If the chicken isn't browned enough, put it under the broiler for 2 minutes.  <br>
+                  8. Cover the pan tightly with aluminum foil and allow to rest for 10 minutes. Sprinkle with salt and serve hot with the pan juices. <br>
+                 
+
+                </div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin "> 1 Likes | 0 Dislike </div>
+                <%= link_to "Like", like_recipe_path(@recipe), method: :get %>  | 
+                <%= link_to "Dislike", dislike_recipe_path(@recipe), method: :get %>
+            </div>
+      
+        </div>
+        <div class="col-sm-4 pre_payment_form "> 
+            <div class="row full_color">
+                <div class="col-m-12 price">RM20 </div>
+            </div>
+
+
+          <form class="space" action="/" method="post">
+          
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                First name<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off" />
+            </div>
+        
+            <div class="field-wrap">
+              <label>
+                Last name<span class="req">*</span>
+              </label>
+              <input type="text"required autocomplete="off"/>
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+           <div class="field-wrap">
+            <label>
+              Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Allergy<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+          
+          <button type="submit" class="button button-block"/>Order here</button>
+          
+          </form>
+        </div>
+
+        
+
+    </div>
+  </div>
+</div>
+
+
+<section class="recipes">
+  <div class="container"> 
+  
+
+
+
+    <%= link_to "Edit", edit_recipe_path(@recipe) %>
+    <%= link_to "Home", root_path %>
+    <%= link_to "Delete", recipe_path(@recipe), method: :delete, data: {Confirm: "Are you sure"} %>
+
+
+  </div>
+</div>
+
+<script> 
+$('.pre_payment_form').find('input, textarea').on('keyup blur focus', function (e) {
+  
+  var $this = $(this),
+      label = $this.prev('label');
+
+    if (e.type === 'keyup') {
+      if ($this.val() === '') {
+          label.removeClass('active highlight');
+        } else {
+          label.addClass('active highlight');
+        }
+    } else if (e.type === 'blur') {
+      if( $this.val() === '' ) {
+        label.removeClass('active highlight'); 
+      } else {
+        label.removeClass('highlight');   
+      }   
+    } else if (e.type === 'focus') {
+      
+      if( $this.val() === '' ) {
+        label.removeClass('highlight'); 
+      } 
+      else if( $this.val() !== '' ) {
+        label.addClass('highlight');
+      }
+    }
+
+});
+
+$('.tab a').on('click', function (e) {
+  
+  e.preventDefault();
+  
+  $(this).parent().addClass('active');
+  $(this).parent().siblings().removeClass('active');
+  
+  target = $(this).attr('href');
+
+  $('.tab-content > div').not(target).hide();
+  
+  $(target).fadeIn(600);
+  
+});
+</script>
+

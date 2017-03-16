@@ -28,4 +28,8 @@ Rails.application.routes.draw do
     resources :comments
   end
   
+  resources :posts
+  resources :reservations
+
+
 end
