@@ -32,10 +32,10 @@ class ReservationsController < ApplicationController
 
 	def diabone
 		render "reservations/diabone"  
-
 	end
 
-	def diabetes_two
+	def diabtwo
+		render "reservations/diabtwo"  
 	end
 
 	def diabetes_three
