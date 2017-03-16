@@ -1,0 +1,178 @@
+
+
+<section class="clear_top">
+  <div class="container">
+      <h2 class="title_recip">Nasi dagang & baked fish curry</h2>
+  </div>
+</div>
+
+<section class="details">
+   <!--Row with two columns divided in 1:2 ratio-->
+   <div class="container "> 
+    <div class="row ">
+      <div class="col-sm-6"><img src="/assets/diab_receipe4.png"></div>
+        
+        <div class="col-sm-4 no-margin"> <p class="title_info">INFORMATIONS ABOUT YOUR DISH :</p>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin"> <span class="glyphicon glyphicon-time"></span> 60 mins<br><span class="glyphicon glyphicon-stats"></span> calories: 325kcal. fat: 9g. carbohydrates: 34g. protein: 25g.</div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin", style="text-align: justify;">by Chef Mahmor Abas (Columbia Asia Hospital-Nusajaya)</div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin", style="text-align: justify;">
+                  <b>Nasi Dagang (3 servings) </b><br>
+                  1. 100g brown rice, soaked at least 1 hour <br>
+                  2. 100g low fat milk <br>
+                  3. 1 small shallot, sliced <br>
+                  4. 1 inch ginger, finely shredded <br>
+                  5. 2 cloves garlic, ground <br>
+                  6. 1 stalk lemongrass, ground <br>
+                  7. 1 pandan leaf, knotted<br>
+                  8. 1 tsp halba (fenugreek seeds)<br><br>
+
+                  <b>Baked fish curry (1 serving) </b><br>
+                  1. 100g mackerel or other fish fillet <br>
+                  2. 100ml low fat milk <br>
+                  3. 1 tsp coriander seeds <br>
+                  4. 1 tsp dried chilli paste <br>
+                  5. 1 small shallot <br>
+                  6. 1 inch ginger <br>
+                  7. turmeric root<br>
+                  8. basil leaves<br>
+                  9. salt, to taste
+                
+                </div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin" style="text-align: justify;">
+                  <b>Direction</b><br>
+                  1. Soak brown rice in water (at least 1 hour). Prepare ingredients: sliced shallots, julienned ginger, ground garlic and lemongras.<br>
+                  2. Toss brown rice and put into rice cooker. Add in low fat milk, halba, pandan leaf and prepared ingredients. <br>
+                  3. *Bake the fish (8 minutes) at 180°C. Season with salt and turmeric powder. *alternately pan frying the fish on a non-stick pan. <br>
+                  4. Blend low fat milk, coriander seeds, chili paste, turmeric, shallot and ginger. Boil all ingredients together until gravy thickens. Season with salt and local basil leaf. <br>
+                  5.  Serve with rice and fresh condiments (bitter gourd, cherry tomato, cucumber). <br>
+                </div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin "> 105 Likes | 5 Dislike </div>
+                <%= link_to "Like", like_recipe_path(@recipe), method: :get %>  | 
+                <%= link_to "Dislike", dislike_recipe_path(@recipe), method: :get %>
+            </div>
+      
+        </div>
+        <div class="col-sm-4 pre_payment_form "> 
+            <div class="row full_color">
+                <div class="col-m-12 price">RM20 </div>
+            </div>
+
+
+          <form class="space" action="/" method="post">
+          
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                First name<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off" />
+            </div>
+        
+            <div class="field-wrap">
+              <label>
+                Last name<span class="req">*</span>
+              </label>
+              <input type="text"required autocomplete="off"/>
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+           <div class="field-wrap">
+            <label>
+              Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Allergy<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+          
+          <button type="submit" class="button button-block"/>Order here</button>
+          
+          </form>
+        </div>
+     
+
+    </div>
+  </div>
+</div>
+
+
+<section class="recipes">
+  <div class="container"> 
+  
+
+
+
+    <%= link_to "Edit", edit_recipe_path(@recipe) %>
+    <%= link_to "Home", root_path %>
+    <%= link_to "Delete", recipe_path(@recipe), method: :delete, data: {Confirm: "Are you sure"} %>
+
+
+  </div>
+</div>
+
+<script> 
+$('.pre_payment_form').find('input, textarea').on('keyup blur focus', function (e) {
+  
+  var $this = $(this),
+      label = $this.prev('label');
+
+    if (e.type === 'keyup') {
+      if ($this.val() === '') {
+          label.removeClass('active highlight');
+        } else {
+          label.addClass('active highlight');
+        }
+    } else if (e.type === 'blur') {
+      if( $this.val() === '' ) {
+        label.removeClass('active highlight'); 
+      } else {
+        label.removeClass('highlight');   
+      }   
+    } else if (e.type === 'focus') {
+      
+      if( $this.val() === '' ) {
+        label.removeClass('highlight'); 
+      } 
+      else if( $this.val() !== '' ) {
+        label.addClass('highlight');
+      }
+    }
+
+});
+
+$('.tab a').on('click', function (e) {
+  
+  e.preventDefault();
+  
+  $(this).parent().addClass('active');
+  $(this).parent().siblings().removeClass('active');
+  
+  target = $(this).attr('href');
+
+  $('.tab-content > div').not(target).hide();
+  
+  $(target).fadeIn(600);
+  
+});
+</script>
+

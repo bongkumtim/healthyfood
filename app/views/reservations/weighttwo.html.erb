@@ -1,0 +1,166 @@
+
+
+<section class="clear_top">
+  <div class="container">
+      <h2 class="title_recip">Greek Yoghurt Egg Salad Sandwich</h2>
+  </div>
+</div>
+
+<section class="details">
+   <!--Row with two columns divided in 1:2 ratio-->
+   <div class="container "> 
+    <div class="row ">
+      <div class="col-sm-4"><img src="/assets/diet_receipe2.png" height="300" width="320"></div>
+        
+        <div class="col-sm-4 no-margin"> <p class="title_info">INFORMATIONS ABOUT YOUR DISH :</p>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin"> <span class="glyphicon glyphicon-time"></span> 10 mins<br><span class="glyphicon glyphicon-stats"></span> calories: 358kcal. fat: 11g. carbohydrates: 35g. protein: 24g.</div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin", style="text-align: justify;">Lightened up with Greek yogurt, you’ll have a hearty sandwich in minutes. And it doesn’t taste healthy!</div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin", style="text-align: justify;">
+                  1. 8 large eggs <br>
+                  2. 2/3 cup plain Greek yogurt <br>
+                  3. 1 tablespoon mayonnaise <br>
+                  4. 1 teaspoon dried dill <br>
+                  5. Kosher salt and freshly ground black pepper, to taste <br>
+                  6. 1 baguette, cut into 3-4 equal pieces, toasted, for serving <br>
+                  7. 2 cups arugula, for serving<br>
+                  8. 2 Roma tomatoes, thinly sliced, for serving<br>
+                  9. 1 avocado, halved, seeded, peeled and thinly sliced, for serving<br>
+                
+                </div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin" style="text-align: justify;">
+                  <b>Direction</b><br>
+                  1. Place eggs in a large saucepan and cover with cold water by 1 inch. Bring to a boil and cook for 1 minute. <br>
+                  2. Cover eggs with a tight-fitting lid and remove from heat; set aside for 8-10 minutes. Drain well and let cool before peeling and dicing. <br>
+                  3. In a large bowl, roughly mash eggs with Greek yogurt, mayonnaise, dill, salt and pepper, to taste. <br>
+                  4. Serve sandwiches on baguette with arugula, tomatoes, avocado and egg salad mixture.<br>
+                </div>
+            </div>
+            <div class="row details no-margin">
+                <div class="col-xs-12 no-margin "> 80 Likes | 5 Dislike </div>
+                <%= link_to "Like", like_recipe_path(@recipe), method: :get %>  | 
+                <%= link_to "Dislike", dislike_recipe_path(@recipe), method: :get %>
+            </div>
+      
+        </div>
+        <div class="col-sm-4 pre_payment_form "> 
+            <div class="row full_color">
+                <div class="col-m-12 price">RM15 </div>
+            </div>
+
+
+          <form class="space" action="/" method="post">
+          
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                First name<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off" />
+            </div>
+        
+            <div class="field-wrap">
+              <label>
+                Last name<span class="req">*</span>
+              </label>
+              <input type="text"required autocomplete="off"/>
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+           <div class="field-wrap">
+            <label>
+              Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Allergy<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+          
+          <button type="submit" class="button button-block"/>Order here</button>
+          
+          </form>
+        </div>
+     
+
+    </div>
+  </div>
+</div>
+
+
+<section class="recipes">
+  <div class="container"> 
+  
+
+
+
+    <%= link_to "Edit", edit_recipe_path(@recipe) %>
+    <%= link_to "Home", root_path %>
+    <%= link_to "Delete", recipe_path(@recipe), method: :delete, data: {Confirm: "Are you sure"} %>
+
+
+  </div>
+</div>
+
+<script> 
+$('.pre_payment_form').find('input, textarea').on('keyup blur focus', function (e) {
+  
+  var $this = $(this),
+      label = $this.prev('label');
+
+    if (e.type === 'keyup') {
+      if ($this.val() === '') {
+          label.removeClass('active highlight');
+        } else {
+          label.addClass('active highlight');
+        }
+    } else if (e.type === 'blur') {
+      if( $this.val() === '' ) {
+        label.removeClass('active highlight'); 
+      } else {
+        label.removeClass('highlight');   
+      }   
+    } else if (e.type === 'focus') {
+      
+      if( $this.val() === '' ) {
+        label.removeClass('highlight'); 
+      } 
+      else if( $this.val() !== '' ) {
+        label.addClass('highlight');
+      }
+    }
+
+});
+
+$('.tab a').on('click', function (e) {
+  
+  e.preventDefault();
+  
+  $(this).parent().addClass('active');
+  $(this).parent().siblings().removeClass('active');
+  
+  target = $(this).attr('href');
+
+  $('.tab-content > div').not(target).hide();
+  
+  $(target).fadeIn(600);
+  
+});
+</script>
+

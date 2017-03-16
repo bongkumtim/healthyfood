@@ -8,5 +8,5 @@ class Recipe < ApplicationRecord
   scope :gout, 					->{ where.not(tag: "protein")} 
   scope :hypertension, 	->{ where.not(tag: "salt")} 
   scope :diabetes, 			->{ where.not(tag: "sugar")} 
-  scope :weight, 					->{ where.not(tag: "fat")} 
+  scope :weight, 				->{ where.not(tag: "fat")} 
 end
