@@ -105,7 +105,7 @@
             <input type="password"required autocomplete="off"/>
           </div>
           
-          <button type="submit" class="button button-block"/>Order here</button>
+          <a href="/receipt" type="submit" class="button button-block"/>Order here</a>
           
           </form>
         </div>
@@ -120,13 +120,7 @@
   <div class="container"> 
   
 
-
-
-    <%= link_to "Edit", edit_recipe_path(@recipe) %>
-    <%= link_to "Home", root_path %>
-    <%= link_to "Delete", recipe_path(@recipe), method: :delete, data: {Confirm: "Are you sure"} %>
-
-
+</section>
   </div>
 </div>
 
