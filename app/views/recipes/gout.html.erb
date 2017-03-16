@@ -1,1 +1,106 @@
-gout.html.erb
+<section class="result_all_recipes">
+  <div class="container menu_search">
+    <%= link_to "Gout", gout_recipes_path, :class => "button recipe_tag" %> 
+    <%= link_to "Hypertension", hypertension_recipes_path, :class => "button recipe_tag" %>
+    <%= link_to "Diabetes", diabetes_recipes_path, :class => "button recipe_tag" %>
+    <%= link_to "Weight", weight_recipes_path, :class => "button recipe_tag" %>
+  </div>
+</div>
+
+
+<section class="recipes">
+  <div class="container">
+    <h2 class="title"> What do you want <span>to eat today ?</span><i class="fa fa-comment"></i></h2>
+
+  </div>
+  <div class="container cf">
+
+ 
+
+
+    <!-- hardcodded recipes -->
+    
+     <div class="recipes-element bounce-up cf">
+      <div class="subject development">
+        <div >
+        <div class="picture" style=" background-image: url('/assets/gout_recipe2.png');">
+        </div>
+
+
+        <p class="comment"><span></span> 0 COMMENT | <span></span> 0 LIKE</p>
+        <h3 class="title_recipes">Zesty Zucchini Spaghetti
+</h3>
+        <div class="text_courant"> A fresh zucchini noodle salad with tomatoes, zucchini, and avocado tossed in a lemon basil vinaigrette. Perfect for summer!  </div>
+
+        <h6 class="info"><span> COOK TIME : </span></br>15 mins </h6> 
+        <h6 class="info"><span> NUTRITION :</span> </br>calories: 386kcal.</br> fat: 5g.</br> carbohydrates: 72g.</br>protein: 14g. </h6> 
+        </div>
+
+       <div >
+        <%= link_to "take a look", :class => "enrole" %>
+        <a class="enrole"> RM15 </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="recipes-element bounce-up cf">
+      <div class="subject development">
+        <div >
+        <div class="picture" style=" background-image: url('/assets/gout_recipe1.png');">
+        </div>
+
+
+        <p class="comment"><span></span> 0 COMMENT | <span></span> 0 LIKE</p>
+        <h3 class="title_recipes">Blood Orange and Duck Confit Salad
+</h3>
+        <div class="text_courant"> Australian Gourmet Traveller recipe for duck, orange and beetroot salad.  </div>
+
+        <h6 class="info"><span> COOK TIME : </span></br>10 mins </h6> 
+        <h6 class="info"><span> NUTRITION :</span> </br>calories: 225kcal.</br> fat: 10g.</br> carbohydrates: 18g.</br>protein: 15g. </h6> 
+        </div>
+
+       <div >
+        <%= link_to "take a look", :class => "enrole" %>
+        <a class="enrole"> RM15 </a>
+        </div>
+      </div>
+    </div>
+
+
+
+</div>
+<div class="container">
+ <%= link_to "Add New recipe", new_recipe_path, :class => "button_modal button-block" %>
+ </div>
+
+
+<script>
+var $animation_elements = $('.recipes-element');
+var $window = $(window);
+
+function check_if_in_view() {
+  var window_height = $window.height();
+  var window_top_position = $window.scrollTop();
+  var window_bottom_position = (window_top_position + window_height);
+
+  $.each($animation_elements, function() {
+    var $element = $(this);
+    var element_height = $element.outerHeight();
+    var element_top_position = $element.offset().top;
+    var element_bottom_position = (element_top_position + element_height);
+
+    //check to see if this current container is within viewport
+    if ((element_bottom_position >= window_top_position) &&
+      (element_top_position <= window_bottom_position)) {
+      $element.addClass('in-view');
+    } else {
+      $element.removeClass('in-view');
+    }
+  });
+}
+
+$window.on('scroll resize', check_if_in_view);
+$window.trigger('scroll');
+</script>
+
+
