@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170315093605) do
+ActiveRecord::Schema.define(version: 20170315132401) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,12 +38,16 @@ ActiveRecord::Schema.define(version: 20170315093605) do
     t.string   "description"
     t.string   "recipe"
     t.string   "direction"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "user_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.string   "tag"
     t.integer  "price"
-    t.string   "image"
+    t.json     "photos"
   end
 
   create_table "reservations", force: :cascade do |t|

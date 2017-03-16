@@ -14,7 +14,7 @@
 
   </div>
   <div class="container cf">
-
+     <% @recipes.each do |recipe|%>
  
 
 
@@ -45,7 +45,12 @@
      <div class="recipes-element bounce-up cf">
       <div class="subject development">
         <div >
+
+        <%= link_to "take a look", recipe_path(recipe.id) , :class => "enrole" %>
+        <%= link_to "by for price", recipe_path(recipe.id) , :class => "enrole" %>
+
         <div class="picture" style=" background-image: url('/assets/diab_receipe3.png');">
+
         </div>
 
 
@@ -202,7 +207,7 @@
 <div class="container">
  <%= link_to "Add New recipe", new_recipe_path, :class => "button_modal button-block" %>
  </div>
-
+<%end %>
 
 <script>
 var $animation_elements = $('.recipes-element');
