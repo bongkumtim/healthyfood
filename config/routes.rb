@@ -32,4 +32,5 @@ Rails.application.routes.draw do
   resources :reservations
 
   get "/diabone" => "reservations#diabone"
+  get "/goutone" => "reservations#goutone"
 end
