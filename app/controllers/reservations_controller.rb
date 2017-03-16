@@ -26,8 +26,8 @@ class ReservationsController < ApplicationController
 	def hypertension_four
 	end
 
-	def goutone
-		render "reservations/goutone"  
+	def receipt
+		render "reservations/receipt"  
 	end
 
 	def diabone
